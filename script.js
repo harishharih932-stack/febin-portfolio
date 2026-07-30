@@ -122,6 +122,95 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ─── Interactive Local Video Upload Triggering ───
+  const overlays = document.querySelectorAll('.upload-trigger-overlay');
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', () => {
+      const input = overlay.querySelector('.local-video-input');
+      input.click();
+    });
+  });
+
+  const videoInputs = document.querySelectorAll('.local-video-input');
+  videoInputs.forEach(input => {
+    input.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        const card = input.closest('.portfolio-card');
+        const video = card.querySelector('.custom-video-preview');
+        const overlay = card.querySelector('.upload-trigger-overlay');
+
+        video.src = url;
+        video.style.display = 'block';
+        overlay.style.display = 'none';
+        video.play();
+      }
+    });
+  });
+
+  // ─── Interactive 3D Particle Backdrop Animation ───
+  const canvasContainer = document.getElementById('portfolio-particles');
+  if (canvasContainer) {
+    const canvas = document.createElement('canvas');
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.display = 'block';
+    canvasContainer.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    const particleCount = 45;
+
+    function resizeCanvas() {
+      canvas.width = canvasContainer.clientWidth;
+      canvas.height = canvasContainer.clientHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3.5 + 1;
+        this.speedX = Math.random() * 0.8 - 0.4;
+        this.speedY = Math.random() * 0.8 - 0.4;
+        this.color = 'rgba(122, 45, 59, ' + (Math.random() * 0.4 + 0.1) + ')';
+      }
+      update() {
+        this.x += this.x / 1000 + this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  }
+
   // ─── Portfolio filter ───
   const filterBtns = document.querySelectorAll('.filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');

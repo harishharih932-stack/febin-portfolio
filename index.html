@@ -53,14 +53,15 @@
 
     <div class="hero-visual reveal">
       <div class="avatar-frame">
-        <!-- Client will upload his own photo here -->
-        <img
-          src="assets/febin-avatar.jpg"
-          alt="Febin Lawrance — Video Editor"
-          width="420"
-          height="560"
-          style="object-fit: cover; object-position: center top;"
-        />
+        <!-- Client avatar video loop -->
+        <video
+          src="assets/hero-avatar-video.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          style="width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: var(--radius-lg); display: block; box-shadow: var(--shadow-lg);"
+        ></video>
 
         <!-- Floating credential badge -->
         <div class="avatar-badge">
@@ -315,123 +316,106 @@
 
 <!-- ===== 7. PORTFOLIO SECTION ===== -->
 <section class="section section--alt" id="portfolio">
-  <div class="container">
+  <!-- Interactive particle backdrop container for 3D depth feeling -->
+  <div id="portfolio-particles" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:0; opacity:0.35;"></div>
+  
+  <div class="container" style="position: relative; z-index: 1;">
     <div class="reveal">
       <h2 class="section-heading">Selected <span class="accent">Works</span></h2>
-      <p class="section-subtitle">A sample of recent projects — real videos coming soon.</p>
+      <p class="section-subtitle">A live sample of recent projects. Click any text to customize, or select your own videos to display!</p>
     </div>
 
     <div class="portfolio-filters reveal">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="youtube">YouTube</button>
-      <button class="filter-btn" data-filter="reel">Reels</button>
-      <button class="filter-btn" data-filter="ad">Ads</button>
-      <button class="filter-btn" data-filter="brand">Brand Film</button>
+      <button class="filter-btn" data-filter="behance">Behance Embeds</button>
+      <button class="filter-btn" data-filter="custom">Custom Uploads</button>
     </div>
 
     <div class="portfolio-grid">
 
-      <!-- Card 1 -->
-      <div class="portfolio-card reveal" data-category="youtube">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
+      <!-- Card 1: Behance Project 1 Embed -->
+      <div class="portfolio-card reveal" data-category="behance">
+        <div class="portfolio-thumb embed-container" style="aspect-ratio: 16/9; background: #000;">
+          <iframe src="https://www.behance.net/embed/project/242441991?ilo0=1" width="100%" height="100%" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" style="border:none; width:100%; height:100%;"></iframe>
         </div>
         <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">YouTube</span>
+          <h3 contenteditable="true">Video Editing Portfolio 2026</h3>
+          <span class="category" contenteditable="true">Behance Embed</span>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="portfolio-card reveal" data-category="reel">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
+      <!-- Card 2: Behance Project 2 Embed -->
+      <div class="portfolio-card reveal" data-category="behance">
+        <div class="portfolio-thumb embed-container" style="aspect-ratio: 16/9; background: #000;">
+          <iframe src="https://www.behance.net/embed/project/250193881?ilo0=1" width="100%" height="100%" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" style="border:none; width:100%; height:100%;"></iframe>
         </div>
         <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">Instagram Reel</span>
+          <h3 contenteditable="true">Video Editing &amp; Motion Design 2026</h3>
+          <span class="category" contenteditable="true">Behance Embed</span>
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="portfolio-card reveal" data-category="brand">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
+      <!-- Card 3: Custom local video file input 1 -->
+      <div class="portfolio-card reveal" data-category="custom">
+        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
+          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
+          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
+            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
+            <span class="placeholder-label">Add Local Video</span>
+            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
+          </div>
         </div>
         <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">Brand Film</span>
+          <h3 contenteditable="true">Interactive Project A</h3>
+          <span class="category" contenteditable="true">Custom Upload</span>
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="portfolio-card reveal" data-category="ad">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
+      <!-- Card 4: Custom local video file input 2 -->
+      <div class="portfolio-card reveal" data-category="custom">
+        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
+          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
+          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
+            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
+            <span class="placeholder-label">Add Local Video</span>
+            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
+          </div>
         </div>
         <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">Ad Creative</span>
+          <h3 contenteditable="true">Interactive Project B</h3>
+          <span class="category" contenteditable="true">Custom Upload</span>
         </div>
       </div>
 
-      <!-- Card 5 -->
-      <div class="portfolio-card reveal" data-category="youtube">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
+      <!-- Card 5: Custom local video file input 3 -->
+      <div class="portfolio-card reveal" data-category="custom">
+        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
+          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
+          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
+            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
+            <span class="placeholder-label">Add Local Video</span>
+            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
+          </div>
         </div>
         <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">YouTube</span>
+          <h3 contenteditable="true">Interactive Project C</h3>
+          <span class="category" contenteditable="true">Custom Upload</span>
         </div>
       </div>
 
-      <!-- Card 6 -->
-      <div class="portfolio-card reveal" data-category="reel">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
+      <!-- Card 6: Custom local video file input 4 -->
+      <div class="portfolio-card reveal" data-category="custom">
+        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
+          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
+          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
+            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
+            <span class="placeholder-label">Add Local Video</span>
+            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
+          </div>
         </div>
         <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">Instagram Reel</span>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="portfolio-card reveal" data-category="brand">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
-        </div>
-        <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">Brand Film</span>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-      <div class="portfolio-card reveal" data-category="ad">
-        <div class="portfolio-thumb">
-          <!-- Add project video here -->
-          <div class="play-icon">&#9654;</div>
-          <span class="placeholder-label">Video Placeholder — Add Project Video</span>
-        </div>
-        <div class="portfolio-info">
-          <h3>Project Title</h3>
-          <span class="category">Ad Creative</span>
+          <h3 contenteditable="true">Interactive Project D</h3>
+          <span class="category" contenteditable="true">Custom Upload</span>
         </div>
       </div>
 
