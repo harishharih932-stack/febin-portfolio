@@ -151,19 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ─── Unmute Hero Loop On Interaction ───
-  const heroVideo = document.querySelector('.hero-visual video');
-  if (heroVideo) {
-    heroVideo.addEventListener('click', () => {
-      if (heroVideo.muted) {
-        heroVideo.muted = false;
-        heroVideo.volume = 0.8;
-      } else {
-        heroVideo.muted = true;
-      }
-    });
-  }
-
   // ─── Interactive 3D Particle Backdrop Animation ───
   const canvasContainer = document.getElementById('portfolio-particles');
   if (canvasContainer) {
