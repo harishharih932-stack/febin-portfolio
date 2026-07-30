@@ -1,5 +1,6 @@
 /* ===================================================
    Febin Lawrance — Scroll Animations & Interactions
+   Duron-style 3D Depth Particles, Audio and Uploads
    =================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -87,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function step(now) {
           const progress = Math.min((now - start) / duration, 1);
-          // ease-out cubic
           const ease = 1 - Math.pow(1 - progress, 3);
           const current = Math.round(target * ease);
           el.textContent = prefix + current.toLocaleString() + suffix;
@@ -144,10 +144,25 @@ document.addEventListener('DOMContentLoaded', () => {
         video.src = url;
         video.style.display = 'block';
         overlay.style.display = 'none';
+        video.muted = false; // Enable audio
+        video.volume = 0.8;
         video.play();
       }
     });
   });
+
+  // ─── Unmute Hero Loop On Interaction ───
+  const heroVideo = document.querySelector('.hero-visual video');
+  if (heroVideo) {
+    heroVideo.addEventListener('click', () => {
+      if (heroVideo.muted) {
+        heroVideo.muted = false;
+        heroVideo.volume = 0.8;
+      } else {
+        heroVideo.muted = true;
+      }
+    });
+  }
 
   // ─── Interactive 3D Particle Backdrop Animation ───
   const canvasContainer = document.getElementById('portfolio-particles');
@@ -179,10 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
         this.size = Math.random() * 3.5 + 1;
         this.speedX = Math.random() * 0.8 - 0.4;
         this.speedY = Math.random() * 0.8 - 0.4;
-        this.color = 'rgba(122, 45, 59, ' + (Math.random() * 0.4 + 0.1) + ')';
+        this.color = 'rgba(230, 33, 67, ' + (Math.random() * 0.4 + 0.1) + ')';
       }
       update() {
-        this.x += this.x / 1000 + this.speedX;
+        this.x += this.speedX;
         this.y += this.speedY;
         if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
           this.reset();
@@ -210,6 +225,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animateParticles();
   }
+
+  // ─── 3D Card Hover Perspective Effect (Duron Premium Look) ───
+  const dCards = document.querySelectorAll('.portfolio-card, .why-card, .service-card, .about-highlight-item');
+  dCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      const angleX = (yc - y) / 15;
+      const angleY = (x - xc) / 15;
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-8px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  });
 
   // ─── Portfolio filter ───
   const filterBtns = document.querySelectorAll('.filter-btn');
