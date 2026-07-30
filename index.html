@@ -3,507 +3,492 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Febin Lawrance — Video Editor | Crafting Stories, One Frame at a Time</title>
-  <meta name="description" content="Professional video editing portfolio of Febin Lawrance — specializing in cinematic edits, color grading, motion graphics, reels, and ad creatives." />
-  <meta name="keywords" content="video editor, freelance editor, video editing, color grading, motion graphics, reels editing" />
-  <meta name="author" content="Febin Lawrance" />
-
-  <!-- Fonts -->
+  <title>Febin Lawrance | Video Editor</title>
+  <meta name="description" content="Febin Lawrance — Freelance Video Editor specializing in cinematic editing, color grading, motion graphics and reels." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- Duron-style 3D Spatial Backdrop Glows -->
-<div id="spatial-glow-backdrop"></div>
+<!-- ───────────────────────── CURSOR ───────────────────────── -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <a href="#" class="nav-logo"><span>F</span>ebin.</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#why">Why Me</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
+<!-- ───────────────────────── LOADER ───────────────────────── -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <span class="loader-name">FEBIN</span>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
   </div>
+</div>
+
+<!-- ───────────────────────── NAV ───────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">FL</a>
+  <ul class="nav-menu">
+    <li><a href="#work" class="nav-link">Work</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="nav-burger" id="burger" aria-label="menu">
+    <span></span><span></span>
+  </button>
 </nav>
 
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="#work" class="mn-link">Work</a></li>
+    <li><a href="#about" class="mn-link">About</a></li>
+    <li><a href="#services" class="mn-link">Services</a></li>
+    <li><a href="#contact" class="mn-link">Contact</a></li>
+  </ul>
+</div>
 
-<!-- ===== 1. HERO SECTION ===== -->
+<!-- ───────────────────────── HERO ───────────────────────── -->
 <section class="hero" id="hero">
-  <div class="container">
-    <div class="hero-text reveal">
-      <div class="hero-label">Video Editor</div>
-      <h1 class="hero-name">Febin Lawrance</h1>
-      <p class="hero-title">Freelance Video Editor &amp; Post-Production Specialist</p>
-      <p class="hero-tagline">"Crafting stories, one frame at a time."</p>
-      <div class="hero-buttons">
-        <a href="#portfolio" class="btn btn-primary">View Work</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-      </div>
+  <div class="hero-bg">
+    <div class="hero-bg-grad"></div>
+    <div class="hero-noise"></div>
+  </div>
+
+  <!-- Left: text -->
+  <div class="hero-content">
+    <div class="hero-tag" data-aos="fade-up">
+      <span class="dot"></span> Available for freelance
+    </div>
+    <h1 class="hero-heading" data-aos="fade-up" data-aos-delay="100">
+      <em>Febin</em><br>
+      <span>Lawrance</span>
+    </h1>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">
+      Video Editor &amp; Post‑Production<br>Specialist
+    </p>
+    <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+      <a href="#work" class="btn btn-fill">View Work</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
     </div>
 
-    <div class="hero-visual reveal">
-      <div class="avatar-frame">
-        <!-- Client avatar video loop -->
-        <video
-          src="assets/hero-avatar-video.mp4"
-          autoplay
-          loop
-          controls
-          playsinline
-          style="width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: var(--radius-lg); display: block; box-shadow: var(--shadow-lg);"
-        ></video>
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+      <div class="hstat"><span class="counter" data-target="3">0</span>+<small>Years</small></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="counter" data-target="100">0</span>+<small>Projects</small></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="counter" data-target="50">0</span>+<small>Clients</small></div>
+    </div>
+  </div>
 
-        <!-- Floating credential badge -->
-        <div class="avatar-badge">
-          <div class="badge-icon">&#9654;</div>
-          <div class="badge-text">
-            Video Editor
-            <span>3+ Years Experience</span>
-          </div>
+  <!-- Right: video reel -->
+  <div class="hero-reel" data-aos="fade-left" data-aos-delay="200">
+    <div class="reel-frame">
+      <video
+        id="heroVideo"
+        src="assets/hero-avatar-video.mp4"
+        loop
+        playsinline
+        muted
+        autoplay
+      ></video>
+      <div class="reel-overlay">
+        <button class="reel-sound-btn" id="soundBtn" title="Toggle Sound">
+          <svg id="iconMuted" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg id="iconSound" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+      </div>
+      <div class="reel-tag">
+        <span>&#9654; Showreel 2026</span>
+      </div>
+    </div>
+    <div class="reel-deco reel-deco-1"></div>
+    <div class="reel-deco reel-deco-2"></div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── MARQUEE ───────────────────────── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Video Editing</span><span class="mx">✦</span>
+    <span>Color Grading</span><span class="mx">✦</span>
+    <span>Motion Graphics</span><span class="mx">✦</span>
+    <span>Sound Design</span><span class="mx">✦</span>
+    <span>Reels &amp; Shorts</span><span class="mx">✦</span>
+    <span>Ad Creatives</span><span class="mx">✦</span>
+    <span>Brand Films</span><span class="mx">✦</span>
+    <span>Video Editing</span><span class="mx">✦</span>
+    <span>Color Grading</span><span class="mx">✦</span>
+    <span>Motion Graphics</span><span class="mx">✦</span>
+    <span>Sound Design</span><span class="mx">✦</span>
+    <span>Reels &amp; Shorts</span><span class="mx">✦</span>
+    <span>Ad Creatives</span><span class="mx">✦</span>
+    <span>Brand Films</span><span class="mx">✦</span>
+  </div>
+</div>
+
+<!-- ───────────────────────── WORK / PORTFOLIO ───────────────────────── -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Selected<br><em>Works</em></h2>
+      <p class="section-desc">Real projects. Click any card to watch. Upload your own videos using the + cards below.</p>
+    </div>
+
+    <!-- Behance Embeds Row -->
+    <div class="works-grid" id="worksGrid">
+
+      <!-- Behance Project 1 -->
+      <div class="work-card work-card--wide" data-aos="fade-up">
+        <div class="work-thumb">
+          <iframe
+            src="https://www.behance.net/embed/project/242441991?ilo0=1"
+            allowfullscreen
+            frameborder="0"
+            allow="clipboard-write"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+        <div class="work-info">
+          <h3 contenteditable="true" spellcheck="false">Video Editing Portfolio 2026</h3>
+          <span contenteditable="true" spellcheck="false">Behance Project</span>
         </div>
       </div>
+
+      <!-- Behance Project 2 -->
+      <div class="work-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="work-thumb">
+          <iframe
+            src="https://www.behance.net/embed/project/250193881?ilo0=1"
+            allowfullscreen
+            frameborder="0"
+            allow="clipboard-write"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+        <div class="work-info">
+          <h3 contenteditable="true" spellcheck="false">Video Editing &amp; Motion Design 2026</h3>
+          <span contenteditable="true" spellcheck="false">Behance Project</span>
+        </div>
+      </div>
+
+      <!-- Upload Card 1 -->
+      <div class="work-card upload-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="work-thumb upload-thumb" id="upload1">
+          <video class="upload-preview" controls style="display:none;width:100%;height:100%;object-fit:cover;"></video>
+          <div class="upload-prompt">
+            <div class="upload-icon">+</div>
+            <p>Click to add video</p>
+            <input type="file" accept="video/*" class="upload-input" />
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 contenteditable="true" spellcheck="false">Project Title</h3>
+          <span contenteditable="true" spellcheck="false">Category</span>
+        </div>
+      </div>
+
+      <!-- Upload Card 2 -->
+      <div class="work-card upload-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="work-thumb upload-thumb" id="upload2">
+          <video class="upload-preview" controls style="display:none;width:100%;height:100%;object-fit:cover;"></video>
+          <div class="upload-prompt">
+            <div class="upload-icon">+</div>
+            <p>Click to add video</p>
+            <input type="file" accept="video/*" class="upload-input" />
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 contenteditable="true" spellcheck="false">Project Title</h3>
+          <span contenteditable="true" spellcheck="false">Category</span>
+        </div>
+      </div>
+
+      <!-- Upload Card 3 -->
+      <div class="work-card upload-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="work-thumb upload-thumb" id="upload3">
+          <video class="upload-preview" controls style="display:none;width:100%;height:100%;object-fit:cover;"></video>
+          <div class="upload-prompt">
+            <div class="upload-icon">+</div>
+            <p>Click to add video</p>
+            <input type="file" accept="video/*" class="upload-input" />
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 contenteditable="true" spellcheck="false">Project Title</h3>
+          <span contenteditable="true" spellcheck="false">Category</span>
+        </div>
+      </div>
+
+      <!-- Upload Card 4 -->
+      <div class="work-card upload-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="work-thumb upload-thumb" id="upload4">
+          <video class="upload-preview" controls style="display:none;width:100%;height:100%;object-fit:cover;"></video>
+          <div class="upload-prompt">
+            <div class="upload-icon">+</div>
+            <p>Click to add video</p>
+            <input type="file" accept="video/*" class="upload-input" />
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 contenteditable="true" spellcheck="false">Project Title</h3>
+          <span contenteditable="true" spellcheck="false">Category</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-
-<!-- ===== 2. ABOUT SECTION ===== -->
-<section class="section" id="about">
+<!-- ───────────────────────── ABOUT ───────────────────────── -->
+<section class="section about-section" id="about">
   <div class="container">
-    <div class="about-content">
-      <div class="about-text reveal">
-        <h2 class="section-heading">Get to Know <span class="accent">Febin</span></h2>
-        <div class="section-subtitle">A storyteller with a timeline, not just a tool.</div>
-        <p>
-          Febin Lawrance is a passionate video editor with an eye for rhythm, emotion, and narrative flow. What started as a fascination with turning raw footage into polished stories has grown into a dedicated craft — one that blends technical precision with creative instinct. Every cut, transition, and grade is made with intention, always serving the story first.
+    <div class="about-grid">
+
+      <div class="about-left" data-aos="fade-right">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">The Story<br>Behind the<br><em>Edit</em></h2>
+        <div class="about-image-wrap">
+          <img src="assets/febin-avatar.jpg" alt="Febin Lawrance" class="about-img" />
+          <div class="about-img-badge">
+            <span class="badge-num">3+</span>
+            <span class="badge-txt">Years of<br>Experience</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right" data-aos="fade-left" data-aos-delay="150">
+        <p class="about-lead">
+          I'm Febin Lawrance — a freelance video editor who believes that great editing is invisible. When it's done right, the viewer doesn't notice the cuts; they just feel the story.
         </p>
-        <p>
-          With experience across YouTube content, brand campaigns, social media reels, and personal films, Febin brings versatility to every project. He thrives on understanding the creator's vision, then elevating it with pacing, sound design, and visual polish that make the final product feel truly cinematic. Whether it's a 15-second reel or a 30-minute documentary, the approach is always the same: thoughtful, detail-driven, and collaborative.
+        <p class="about-body">
+          With 3+ years of hands-on experience across YouTube content, brand films, social media reels, and ad creatives, I bring technical precision and creative instinct to every project. My workflow is built on clear communication, fast turnarounds, and a genuine obsession with pacing and rhythm.
         </p>
-        <p>
-          When he's not on the timeline, Febin is studying new editing techniques, exploring color science, or experimenting with motion design — constantly evolving to deliver work that stands out.
+        <p class="about-body">
+          Whether it's a 15-second reel or a 30-minute documentary — I approach every frame with the same level of care.
         </p>
-      </div>
 
-      <div class="about-highlights reveal">
-        <div class="about-highlight-item">
-          <span class="number">3+</span>
-          <span class="label">Years Editing</span>
+        <div class="tools-row">
+          <span class="tool-chip">Premiere Pro</span>
+          <span class="tool-chip">After Effects</span>
+          <span class="tool-chip">DaVinci Resolve</span>
+          <span class="tool-chip">Photoshop</span>
+          <span class="tool-chip">Audition</span>
+          <span class="tool-chip">CapCut</span>
         </div>
-        <div class="about-highlight-item">
-          <span class="number">100+</span>
-          <span class="label">Projects Done</span>
-        </div>
-        <div class="about-highlight-item">
-          <span class="number">50+</span>
-          <span class="label">Happy Clients</span>
-        </div>
-        <div class="about-highlight-item">
-          <span class="number">1M+</span>
-          <span class="label">Views Generated</span>
-        </div>
+
+        <a href="#contact" class="btn btn-fill" style="margin-top:40px;">Let's Work Together</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ===== 3. WHY FEBIN SECTION ===== -->
-<section class="section section--alt" id="why">
+<!-- ───────────────────────── SKILLS ───────────────────────── -->
+<section class="section skills-section" id="skills">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-heading">Why Choose <span class="accent">Febin</span></h2>
-      <p class="section-subtitle">Not just another editor — here's what makes the difference.</p>
+    <div class="section-head centered" data-aos="fade-up">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title">Skills &amp; <em>Tools</em></h2>
     </div>
-
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="card-icon">&#9835;</div>
-        <h3>Master of Pacing &amp; Rhythm</h3>
-        <p>Every edit is designed to flow with the music, the narration, and the emotional arc. Febin obsesses over beat-matching, timing, and the feel of each transition — so the viewer stays engaged from start to finish.</p>
+    <div class="skills-grid">
+      <div class="skill-item" data-aos="fade-up">
+        <div class="skill-top"><span>Adobe Premiere Pro</span><span class="skill-pct">95%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
       </div>
-
-      <div class="why-card reveal">
-        <div class="card-icon">&#9889;</div>
-        <h3>Fast Turnaround, No Shortcuts</h3>
-        <p>Deadlines are sacred. Febin delivers polished work fast — without sacrificing quality. Clear communication and an efficient workflow mean you get your content on time, every time.</p>
+      <div class="skill-item" data-aos="fade-up" data-aos-delay="60">
+        <div class="skill-top"><span>DaVinci Resolve</span><span class="skill-pct">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
       </div>
-
-      <div class="why-card reveal">
-        <div class="card-icon">&#9997;</div>
-        <h3>True Collaboration</h3>
-        <p>Your vision matters. Febin works closely with every client — listening, adapting, and iterating until the final product feels exactly right. No ego, no guesswork, just partnership.</p>
+      <div class="skill-item" data-aos="fade-up" data-aos-delay="120">
+        <div class="skill-top"><span>After Effects</span><span class="skill-pct">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
       </div>
-
-      <div class="why-card reveal">
-        <div class="card-icon">&#9881;</div>
-        <h3>Versatility Across Formats</h3>
-        <p>Long-form YouTube edits, snappy Instagram reels, polished brand films, high-energy ads — Febin adapts his style to suit the content, the platform, and the audience seamlessly.</p>
+      <div class="skill-item" data-aos="fade-up" data-aos-delay="180">
+        <div class="skill-top"><span>CapCut</span><span class="skill-pct">88%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="88"></div></div>
       </div>
-
-      <div class="why-card reveal">
-        <div class="card-icon">&#9836;</div>
-        <h3>Sound Design &amp; Color Eye</h3>
-        <p>Great editing isn't just about visuals. Febin layers sound effects, adjusts audio dynamics, and applies cinematic color grading to give every project a professional, immersive finish.</p>
+      <div class="skill-item" data-aos="fade-up" data-aos-delay="240">
+        <div class="skill-top"><span>Adobe Audition</span><span class="skill-pct">75%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+      </div>
+      <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="skill-top"><span>Photoshop</span><span class="skill-pct">80%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ===== 4. PROCESS SECTION ===== -->
-<section class="section" id="process">
+<!-- ───────────────────────── SERVICES ───────────────────────── -->
+<section class="section services-section" id="services">
   <div class="container">
-    <div class="reveal" style="text-align:center;">
-      <h2 class="section-heading" style="display:block; text-align:center;">How <span class="accent">It Works</span></h2>
-      <p class="section-subtitle" style="margin:0 auto 48px;">A clear, structured workflow — from first call to final file.</p>
-      <div style="text-align:center;">
-        <span class="section-heading" style="display:none;"></span>
-      </div>
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-title">Services</h2>
     </div>
-
-    <div class="process-timeline reveal">
-      <div class="process-step">
-        <div class="process-dot">1</div>
-        <div class="process-content">
-          <h3>Discovery Call</h3>
-          <p>We start with a conversation. You share your vision, goals, and reference style. I ask the right questions to understand exactly what you need — so there are no surprises later.</p>
+    <div class="services-list">
+      <div class="service-row" data-aos="fade-up">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <h3>Video Editing</h3>
+          <p>From raw footage to a polished story — precise cuts, seamless transitions, and narrative pacing that keeps viewers hooked.</p>
         </div>
+        <div class="svc-arrow">↗</div>
       </div>
-      <div class="process-step">
-        <div class="process-dot">2</div>
-        <div class="process-content">
-          <h3>Footage Review</h3>
-          <p>I go through all your raw material — video clips, audio, graphics — and organize everything. This is where I start mapping out the structure and flow of the edit.</p>
+      <div class="service-row" data-aos="fade-up">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <h3>Color Grading</h3>
+          <p>Cinematic color correction and creative LUT-based grading that sets the mood and makes your visuals instantly recognizable.</p>
         </div>
+        <div class="svc-arrow">↗</div>
       </div>
-      <div class="process-step">
-        <div class="process-dot">3</div>
-        <div class="process-content">
-          <h3>First Cut</h3>
-          <p>A rough assembly comes together — the story takes shape, the pacing is set, and transitions are placed. You get a first look to give feedback before anything is finalized.</p>
+      <div class="service-row" data-aos="fade-up">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <h3>Motion Graphics</h3>
+          <p>Animated titles, lower thirds, logo reveals, and kinetic typography that add energy and professionalism.</p>
         </div>
+        <div class="svc-arrow">↗</div>
       </div>
-      <div class="process-step">
-        <div class="process-dot">4</div>
-        <div class="process-content">
-          <h3>Revisions</h3>
-          <p>Based on your notes, I refine the edit — tightening cuts, polishing audio, adjusting color, and adding finishing touches. Two rounds of revisions are included by default.</p>
+      <div class="service-row" data-aos="fade-up">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <h3>Reels &amp; Shorts</h3>
+          <p>Fast-paced, scroll-stopping short-form content for Instagram, YouTube Shorts, and TikTok — built to perform.</p>
         </div>
+        <div class="svc-arrow">↗</div>
       </div>
-      <div class="process-step">
-        <div class="process-dot">5</div>
-        <div class="process-content">
-          <h3>Final Delivery</h3>
-          <p>Once you're happy, I export in the format and resolution you need — ready to upload, publish, or present. Fast, clean, and exactly what you envisioned.</p>
+      <div class="service-row" data-aos="fade-up">
+        <div class="svc-num">05</div>
+        <div class="svc-body">
+          <h3>Sound Design</h3>
+          <p>SFX layering, audio cleanup, music sync, and dynamic mixing to give every video a cinematic audio landscape.</p>
         </div>
+        <div class="svc-arrow">↗</div>
+      </div>
+      <div class="service-row" data-aos="fade-up">
+        <div class="svc-num">06</div>
+        <div class="svc-body">
+          <h3>Ad Creatives</h3>
+          <p>High-converting video ads structured for performance — punchy, on-brand, and optimized for social platforms.</p>
+        </div>
+        <div class="svc-arrow">↗</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ===== 5. SERVICES SECTION ===== -->
-<section class="section section--alt" id="services">
+<!-- ───────────────────────── PROCESS ───────────────────────── -->
+<section class="section process-section" id="process">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-heading">What I <span class="accent">Offer</span></h2>
-      <p class="section-subtitle">End-to-end post-production services, tailored to your content.</p>
+    <div class="section-head centered" data-aos="fade-up">
+      <span class="section-label">Workflow</span>
+      <h2 class="section-title">How I <em>Work</em></h2>
     </div>
-
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-num">01</div>
-        <h3>Video Editing</h3>
-        <p>From raw footage to polished story — precise cuts, seamless transitions, and narrative flow that keeps your audience watching.</p>
+    <div class="process-steps">
+      <div class="ps-item" data-aos="fade-up">
+        <div class="ps-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We discuss your vision, goals, references, and timeline so I understand exactly what you need before touching the timeline.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="service-num">02</div>
-        <h3>Color Grading</h3>
-        <p>Cinematic color correction and creative grading that sets the mood, enhances skin tones, and gives your videos a professional, cohesive look.</p>
+      <div class="ps-connector"></div>
+      <div class="ps-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="ps-num">02</div>
+        <h3>Footage Review</h3>
+        <p>I review all raw clips, audio, and assets — organizing and mapping the structure and flow of the edit.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="service-num">03</div>
-        <h3>Motion Graphics</h3>
-        <p>Custom lower thirds, animated titles, logo reveals, and visual effects that add energy and professionalism to your content.</p>
+      <div class="ps-connector"></div>
+      <div class="ps-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="ps-num">03</div>
+        <h3>First Cut</h3>
+        <p>The rough assembly takes shape — pacing, structure, and transitions are established for your review.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="service-num">04</div>
-        <h3>Reels &amp; Shorts Editing</h3>
-        <p>Fast-paced, attention-grabbing short-form edits optimized for Instagram, YouTube Shorts, and TikTok — designed to stop the scroll.</p>
+      <div class="ps-connector"></div>
+      <div class="ps-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="ps-num">04</div>
+        <h3>Revisions</h3>
+        <p>Based on your feedback, I refine cuts, polish audio, adjust color, and add finishing touches. 2 rounds included.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="service-num">05</div>
-        <h3>Sound Design</h3>
-        <p>Audio cleanup, SFX layering, music syncing, and dynamic mixing — because great video needs great sound to land with impact.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-num">06</div>
-        <h3>Ad Creatives</h3>
-        <p>High-converting video ads for social platforms — punchy, on-brand, and structured to drive engagement and clicks.</p>
+      <div class="ps-connector"></div>
+      <div class="ps-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="ps-num">05</div>
+        <h3>Final Delivery</h3>
+        <p>Exported in the exact format and resolution you need — ready to publish, launch, or present.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ===== 6. SKILLS & TOOLS SECTION ===== -->
-<section class="section" id="skills">
+<!-- ───────────────────────── STATS ───────────────────────── -->
+<div class="stats-band">
   <div class="container">
-    <div class="skills-content">
-      <div class="reveal">
-        <h2 class="section-heading">Skills &amp; <span class="accent">Tools</span></h2>
-        <p class="section-subtitle">The creative arsenal behind every project.</p>
-        <div class="skills-text">
-          <p>
-            A strong editor is defined not just by creativity but by mastery of tools. Febin works fluently across industry-standard software — switching seamlessly between platforms depending on what the project demands. Here's a breakdown of the toolkit:
-          </p>
-        </div>
+    <div class="stats-grid">
+      <div class="stat-block" data-aos="fade-up">
+        <span class="snum counter" data-target="3">0</span><span class="snum-suf">+</span>
+        <p>Years of Experience</p>
       </div>
-
-      <div class="skill-bars reveal">
-        <div class="skill-item">
-          <label>Adobe Premiere Pro <span>95%</span></label>
-          <div class="skill-bar-track">
-            <div class="skill-bar-fill" data-width="95%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <label>After Effects <span>85%</span></label>
-          <div class="skill-bar-track">
-            <div class="skill-bar-fill" data-width="85%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <label>DaVinci Resolve <span>90%</span></label>
-          <div class="skill-bar-track">
-            <div class="skill-bar-fill" data-width="90%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <label>Adobe Photoshop <span>80%</span></label>
-          <div class="skill-bar-track">
-            <div class="skill-bar-fill" data-width="80%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <label>Adobe Audition <span>75%</span></label>
-          <div class="skill-bar-track">
-            <div class="skill-bar-fill" data-width="75%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <label>CapCut <span>88%</span></label>
-          <div class="skill-bar-track">
-            <div class="skill-bar-fill" data-width="88%"></div>
-          </div>
-        </div>
+      <div class="stat-block" data-aos="fade-up" data-aos-delay="100">
+        <span class="snum counter" data-target="100">0</span><span class="snum-suf">+</span>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-block" data-aos="fade-up" data-aos-delay="200">
+        <span class="snum counter" data-target="50">0</span><span class="snum-suf">+</span>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-block" data-aos="fade-up" data-aos-delay="300">
+        <span class="snum counter" data-target="1">0</span><span class="snum-suf">M+</span>
+        <p>Views Generated</p>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-
-<!-- ===== 7. PORTFOLIO SECTION ===== -->
-<section class="section section--alt" id="portfolio">
-  <!-- Interactive particle backdrop container for 3D depth feeling -->
-  <div id="portfolio-particles" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:0; opacity:0.35;"></div>
-  
-  <div class="container" style="position: relative; z-index: 1;">
-    <div class="reveal">
-      <h2 class="section-heading">Selected <span class="accent">Works</span></h2>
-      <p class="section-subtitle">A live sample of recent projects. Click any text to customize, or select your own videos to display!</p>
-    </div>
-
-    <div class="portfolio-filters reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="behance">Behance Embeds</button>
-      <button class="filter-btn" data-filter="custom">Custom Uploads</button>
-    </div>
-
-    <div class="portfolio-grid">
-
-      <!-- Card 1: Behance Project 1 Embed -->
-      <div class="portfolio-card reveal" data-category="behance">
-        <div class="portfolio-thumb embed-container" style="aspect-ratio: 16/9; background: #000;">
-          <iframe src="https://www.behance.net/embed/project/242441991?ilo0=1" width="100%" height="100%" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" style="border:none; width:100%; height:100%;"></iframe>
-        </div>
-        <div class="portfolio-info">
-          <h3 contenteditable="true">Video Editing Portfolio 2026</h3>
-          <span class="category" contenteditable="true">Behance Embed</span>
-        </div>
-      </div>
-
-      <!-- Card 2: Behance Project 2 Embed -->
-      <div class="portfolio-card reveal" data-category="behance">
-        <div class="portfolio-thumb embed-container" style="aspect-ratio: 16/9; background: #000;">
-          <iframe src="https://www.behance.net/embed/project/250193881?ilo0=1" width="100%" height="100%" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" style="border:none; width:100%; height:100%;"></iframe>
-        </div>
-        <div class="portfolio-info">
-          <h3 contenteditable="true">Video Editing &amp; Motion Design 2026</h3>
-          <span class="category" contenteditable="true">Behance Embed</span>
-        </div>
-      </div>
-
-      <!-- Card 3: Custom local video file input 1 -->
-      <div class="portfolio-card reveal" data-category="custom">
-        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
-          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
-          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
-            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
-            <span class="placeholder-label">Add Local Video</span>
-            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <h3 contenteditable="true">Interactive Project A</h3>
-          <span class="category" contenteditable="true">Custom Upload</span>
-        </div>
-      </div>
-
-      <!-- Card 4: Custom local video file input 2 -->
-      <div class="portfolio-card reveal" data-category="custom">
-        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
-          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
-          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
-            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
-            <span class="placeholder-label">Add Local Video</span>
-            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <h3 contenteditable="true">Interactive Project B</h3>
-          <span class="category" contenteditable="true">Custom Upload</span>
-        </div>
-      </div>
-
-      <!-- Card 5: Custom local video file input 3 -->
-      <div class="portfolio-card reveal" data-category="custom">
-        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
-          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
-          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
-            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
-            <span class="placeholder-label">Add Local Video</span>
-            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <h3 contenteditable="true">Interactive Project C</h3>
-          <span class="category" contenteditable="true">Custom Upload</span>
-        </div>
-      </div>
-
-      <!-- Card 6: Custom local video file input 4 -->
-      <div class="portfolio-card reveal" data-category="custom">
-        <div class="portfolio-thumb video-uploader-container" style="position: relative;">
-          <video class="custom-video-preview" controls style="width:100%; height:100%; object-fit:cover; display:none;"></video>
-          <div class="upload-trigger-overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.03); cursor:pointer;">
-            <div class="play-icon" style="margin-bottom:0;">&#43;</div>
-            <span class="placeholder-label">Add Local Video</span>
-            <input type="file" accept="video/*" class="local-video-input" style="display:none;" />
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <h3 contenteditable="true">Interactive Project D</h3>
-          <span class="category" contenteditable="true">Custom Upload</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ===== 8. STATS / ACHIEVEMENTS ===== -->
-<section class="section" id="stats">
+<!-- ───────────────────────── TESTIMONIALS ───────────────────────── -->
+<section class="section testimonials-section" id="testimonials">
   <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom: 48px;">
-      <h2 class="section-heading" style="display:block; text-align:center;">The <span class="accent">Numbers</span></h2>
-      <p class="section-subtitle" style="margin: 0 auto;">Results that speak louder than words.</p>
+    <div class="section-head centered" data-aos="fade-up">
+      <span class="section-label">Reviews</span>
+      <h2 class="section-title">What Clients <em>Say</em></h2>
     </div>
-
-    <div class="stats-row reveal">
-      <div class="stat-item">
-        <span class="stat-number" data-count="3" data-suffix="+">0</span>
-        <span class="stat-label">Years of Experience</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="100" data-suffix="+">0</span>
-        <span class="stat-label">Projects Completed</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="1" data-suffix="M+">0</span>
-        <span class="stat-label">Total Views Generated</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="98" data-suffix="%">0</span>
-        <span class="stat-label">Client Satisfaction</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===== 9. TESTIMONIALS ===== -->
-<section class="section section--alt" id="testimonials">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-heading">Client <span class="accent">Words</span></h2>
-      <p class="section-subtitle">What people say after working with Febin.</p>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <span class="quote-mark">&ldquo;</span>
-        <blockquote>
-          Febin understood the mood I wanted before I even explained it fully. The final edit was exactly what I envisioned — clean, cinematic, and perfectly paced. Highly recommend working with him.
-        </blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">R</div>
-          <div class="author-info">
-            <h4>Rahul Menon</h4>
-            <p>YouTuber &amp; Content Creator</p>
+    <div class="testi-grid">
+      <div class="testi-card" data-aos="fade-up">
+        <div class="testi-quote">"</div>
+        <p>Febin understood the mood before I even finished explaining. The final edit was exactly what I envisioned — clean, cinematic, and perfectly paced.</p>
+        <div class="testi-author">
+          <div class="testi-av">R</div>
+          <div>
+            <strong>Rahul Menon</strong>
+            <small>YouTuber &amp; Content Creator</small>
           </div>
         </div>
       </div>
-
-      <div class="testimonial-card reveal">
-        <span class="quote-mark">&ldquo;</span>
-        <blockquote>
-          We needed a brand film turned around in under a week. Febin delivered on day five — and it was better than what agencies quoted us three weeks for. Professional, fast, and incredibly talented.
-        </blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
-          <div class="author-info">
-            <h4>Sneha Iyer</h4>
-            <p>Marketing Manager, Studio Volt</p>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="testi-quote">"</div>
+        <p>We needed a brand film in under a week. Febin delivered day five — better than what agencies quoted us three weeks for. Incredibly talented.</p>
+        <div class="testi-author">
+          <div class="testi-av">S</div>
+          <div>
+            <strong>Sneha Iyer</strong>
+            <small>Marketing Manager, Studio Volt</small>
           </div>
         </div>
       </div>
-
-      <div class="testimonial-card reveal">
-        <span class="quote-mark">&ldquo;</span>
-        <blockquote>
-          The color grading and sound design Febin added completely transformed our raw footage. It went from a casual shoot to something that looked like a Netflix production. Absolutely worth every penny.
-        </blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
-          <div class="author-info">
-            <h4>Arjun Das</h4>
-            <p>Filmmaker &amp; Director</p>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="testi-quote">"</div>
+        <p>The color grading and sound design transformed our raw footage into something that looked like a Netflix production. Absolutely worth it.</p>
+        <div class="testi-author">
+          <div class="testi-av">A</div>
+          <div>
+            <strong>Arjun Das</strong>
+            <small>Filmmaker &amp; Director</small>
           </div>
         </div>
       </div>
@@ -511,149 +496,123 @@
   </div>
 </section>
 
-
-<!-- ===== 10. FAQ ===== -->
-<section class="section" id="faq">
+<!-- ───────────────────────── FAQ ───────────────────────── -->
+<section class="section faq-section" id="faq">
   <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom: 48px;">
-      <h2 class="section-heading" style="display:block; text-align:center;">Frequently <span class="accent">Asked</span></h2>
-      <p class="section-subtitle" style="margin: 0 auto;">Quick answers to common questions.</p>
-    </div>
-
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-question">
-          What is your typical turnaround time?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Most projects are delivered within 3–5 business days, depending on length and complexity. Rush delivery is available for an additional fee — just let me know your deadline upfront and I'll make it work.</p>
-        </div>
+    <div class="faq-wrap">
+      <div class="faq-left" data-aos="fade-right">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Common<br><em>Questions</em></h2>
+        <p style="color:var(--muted);margin-top:20px;">Can't find your answer?<br>Reach out directly.</p>
+        <a href="#contact" class="btn btn-fill" style="margin-top:28px;">Ask a Question</a>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          How many revisions are included?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Every project includes two rounds of revisions at no extra cost. Additional revision rounds can be arranged if needed. I always aim to get as close to your vision as possible in the first cut itself.</p>
+      <div class="faq-right" data-aos="fade-left">
+        <div class="faq-item">
+          <button class="faq-q">What's your turnaround time? <span>+</span></button>
+          <div class="faq-a"><p>Most projects are delivered within 3–5 business days. Rush delivery is available — just mention your deadline upfront.</p></div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          What file formats do you deliver in?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Standard delivery is in MP4 (H.264 or H.265) at your required resolution — 1080p, 4K, or platform-specific formats (9:16 for reels, 16:9 for YouTube). I can also export in ProRes, MOV, or any format you need.</p>
+        <div class="faq-item">
+          <button class="faq-q">How many revisions do I get? <span>+</span></button>
+          <div class="faq-a"><p>Every project includes 2 rounds of revisions. Additional rounds can be arranged if needed.</p></div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          How do I get started on a project?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Simple — reach out via WhatsApp or Instagram (links below), share your brief and footage, and we'll hop on a quick call to align on the vision. From there, I'll send a quote and timeline, and we get rolling.</p>
+        <div class="faq-item">
+          <button class="faq-q">What formats do you deliver? <span>+</span></button>
+          <div class="faq-a"><p>MP4 (H.264/H.265) at 1080p or 4K, plus platform-specific formats (9:16 for reels, 16:9 for YouTube). ProRes, MOV available on request.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do I get started? <span>+</span></button>
+          <div class="faq-a"><p>Simple — WhatsApp or Instagram message with your brief. We'll hop on a quick call, I'll send a quote, and we get rolling.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ===== 11. CONTACT SECTION ===== -->
-<section class="section section--alt" id="contact">
+<!-- ───────────────────────── CONTACT ───────────────────────── -->
+<section class="section contact-section" id="contact">
   <div class="container">
-    <div class="contact-content">
+    <div class="contact-grid">
+      <div class="contact-left" data-aos="fade-right">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's Create<br>Something<br><em>Great</em></h2>
+        <p style="color:var(--muted);margin-top:24px;font-size:1.1rem;line-height:1.8;">Have a project in mind? Drop me a message and let's bring your vision to life.</p>
 
-      <div class="contact-text reveal">
-        <h2>Let's <span class="accent">Work Together</span></h2>
-        <p>Have a project in mind? Whether it's a YouTube video, a brand campaign, or a quick reel — I'd love to hear about it. Reach out through any of the channels below and let's bring your vision to life.</p>
-
-        <div class="contact-links">
-
-          <!-- WhatsApp — Replace with real WhatsApp number -->
-          <a href="https://wa.me/919876543210" class="contact-link-item" target="_blank" rel="noopener">
-            <!-- Replace with real WhatsApp number in the href above (format: 91XXXXXXXXXX) -->
-            <div class="link-icon whatsapp">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <div class="contact-channels">
+          <!-- Replace +91XXXXXXXXXX with real number -->
+          <a href="https://wa.me/91XXXXXXXXXX" class="channel-card" target="_blank">
+            <div class="ch-icon ch-wa">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
-            <div class="link-details">
-              <h4>Chat on WhatsApp</h4>
-              <p>+91 98765 43210</p> <!-- Replace with real WhatsApp number -->
+            <div>
+              <strong>WhatsApp</strong>
+              <small>+91 XXXXXXXXXX</small> <!-- Replace with real number -->
             </div>
           </a>
-
-          <!-- Instagram — Replace with real Instagram handle -->
-          <a href="https://instagram.com/febin.edits" class="contact-link-item" target="_blank" rel="noopener">
-            <!-- Replace with real Instagram handle in the href above -->
-            <div class="link-icon instagram">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <!-- Replace febinlawrance with real Instagram handle -->
+          <a href="https://instagram.com/febinlawrance" class="channel-card" target="_blank">
+            <div class="ch-icon ch-ig">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </div>
-            <div class="link-details">
-              <h4>Follow on Instagram</h4>
-              <p>@febin.edits</p> <!-- Replace with real Instagram handle -->
+            <div>
+              <strong>Instagram</strong>
+              <small>@febinlawrance</small> <!-- Replace with real handle -->
             </div>
           </a>
-
-          <!-- Email -->
-          <a href="mailto:febin.lawrance@email.com" class="contact-link-item">
-            <!-- Replace with real email address -->
-            <div class="link-icon email">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <!-- Replace with real email -->
+          <a href="mailto:febin@email.com" class="channel-card">
+            <div class="ch-icon ch-em">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </div>
-            <div class="link-details">
-              <h4>Send an Email</h4>
-              <p>febin.lawrance@email.com</p> <!-- Replace with real email -->
+            <div>
+              <strong>Email</strong>
+              <small>febin@email.com</small> <!-- Replace with real email -->
             </div>
           </a>
-
         </div>
       </div>
 
-      <div class="contact-form-wrapper reveal">
-        <h3>Drop a Quick Message</h3>
-        <form id="contactForm" onsubmit="return false;">
-          <div class="form-group">
-            <label for="contactName">Your Name</label>
-            <input type="text" id="contactName" placeholder="John Doe" required />
+      <div class="contact-right" data-aos="fade-left" data-aos-delay="150">
+        <form class="contact-form" onsubmit="return false;">
+          <div class="cf-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Doe" required />
           </div>
-          <div class="form-group">
-            <label for="contactEmail">Email Address</label>
-            <input type="email" id="contactEmail" placeholder="you@example.com" required />
+          <div class="cf-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@example.com" required />
           </div>
-          <div class="form-group">
-            <label for="contactProject">Project Type</label>
-            <input type="text" id="contactProject" placeholder="YouTube Video / Reel / Brand Film..." />
+          <div class="cf-group">
+            <label>Project Type</label>
+            <input type="text" placeholder="YouTube / Reel / Brand Film / Ad..." />
           </div>
-          <div class="form-group">
-            <label for="contactMessage">Your Message</label>
-            <textarea id="contactMessage" placeholder="Tell me about your project..." rows="5"></textarea>
+          <div class="cf-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about your project..." rows="5"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+          <button type="submit" class="btn btn-fill" style="width:100%;">Send Message →</button>
         </form>
       </div>
-
     </div>
   </div>
 </section>
 
-
-<!-- ===== 12. FOOTER ===== -->
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 <span class="footer-name">Febin Lawrance</span>. All rights reserved.</p>
+    <div class="footer-inner">
+      <span class="footer-logo">FL</span>
+      <p>© 2026 <em>Febin Lawrance</em>. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://instagram.com/febinlawrance" target="_blank">Instagram</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+        <a href="https://www.behance.net" target="_blank">Behance</a>
+      </div>
+    </div>
   </div>
 </footer>
 
+<button class="go-top" id="goTop">↑</button>
 
-<!-- Scroll-to-top button -->
-<button class="scroll-top" aria-label="Scroll to top">&#8593;</button>
-
-
-<!-- Script -->
 <script src="script.js"></script>
-
 </body>
 </html>
